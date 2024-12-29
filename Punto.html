@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Punto</title>
+    <link rel="stylesheet" href="Punto.css">
+</head>
+<body>
+    <div id="gameInfo">
+        <div id="currentPlayer">
+            Joueur actuel: <span id="carteActuelle"></span>
+        </div>
+    </div>
+    <table id="puntoGrid">
+        <tbody>
+            <script>
+                for (let i = 0; i < 11; i++) {
+                    document.write('<tr>');
+                    for (let j = 0; j < 11; j++) {
+                        
+                        const isCenter = i === 5 && j === 5;
+                        const className = isCenter ? 'center' : 'cell';
+                        document.write(`<td class="${className}" data-row="${i}" data-col="${j}"></td>`);
+                    }
+                    document.write('</tr>');
+                }
+            </script>
+        </tbody>
+    </table>
+
+    <script src="Punto.js"></script>
+</body>
+</html>
