@@ -1,9 +1,9 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --cell: 46px;
-  --gap: 4px;
-  --radius: 8px;
+  --cell: 35px;
+  --gap: 3px;
+  --radius: 6px;
 }
 
 body {
@@ -47,7 +47,7 @@ body {
 }
 
 .title-block h1 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 900;
   background: linear-gradient(135deg, #fff 30%, #aaa);
   -webkit-background-clip: text;
@@ -148,7 +148,7 @@ td {
   border-radius: var(--radius);
   text-align: center;
   vertical-align: middle;
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   font-weight: 900;
   cursor: pointer;
   background: rgba(255,255,255,0.04);
