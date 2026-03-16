@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu Punto</title>
-    <link rel="stylesheet" href="Punto.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Punto.css">
 </head>
 <body>
-    <div id="gameInfo">
-        <div id="currentPlayer">
-            Joueur actuel: <span id="carteActuelle"></span>
-        </div>
+
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+<div class="bg-glow bg-glow-3"></div>
+
+<div class="wrapper">
+
+  <header class="header">
+    <div class="title-block">
+      <h1>Punto</h1>
+      <p class="subtitle">Aligne 4 cartes pour gagner !</p>
     </div>
+    <div class="players-badges">
+      <span class="badge badge-red"   id="badge-red">🔴 Rouge</span>
+      <span class="badge badge-green" id="badge-green">🟢 Vert</span>
+      <span class="badge badge-yellow" id="badge-yellow">🟡 Jaune</span>
+      <span class="badge badge-blue"  id="badge-blue">🔵 Bleu</span>
+    </div>
+  </header>
+
+  <div class="game-info">
+    <div class="current-player-box">
+      <span class="cp-label">Tour de</span>
+      <span class="cp-value" id="carteActuelle">—</span>
+    </div>
+    <div class="hint">Clique sur une case pour poser ta carte</div>
+  </div>
+
+  <div class="board-wrapper">
     <table id="puntoGrid">
-        <tbody>
-            <script>
-                for (let i = 0; i < 11; i++) {
-                    document.write('<tr>');
-                    for (let j = 0; j < 11; j++) {
-                        
-                        const isCenter = i === 5 && j === 5;
-                        const className = isCenter ? 'center' : 'cell';
-                        document.write(`<td class="${className}" data-row="${i}" data-col="${j}"></td>`);
-                    }
-                    document.write('</tr>');
-                }
-            </script>
-        </tbody>
+      <tbody>
+        <script>
+          for (let i = 0; i < 11; i++) {
+            document.write('<tr>');
+            for (let j = 0; j < 11; j++) {
+              const isCenter = i === 5 && j === 5;
+              const className = isCenter ? 'center' : 'cell';
+              document.write(`<td class="${className}" data-row="${i}" data-col="${j}"></td>`);
+            }
+            document.write('</tr>');
+          }
+        </script>
+      </tbody>
     </table>
 
-    <script src="Punto.js"></script>
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <p class="overlay-emoji" id="overlay-emoji">🎉</p>
+        <p class="overlay-title" id="overlay-title"></p>
+        <p class="overlay-sub" id="overlay-sub"></p>
+        <button class="btn-new" onclick="location.reload()">Rejouer</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="Punto.js"></script>
 </body>
 </html>
